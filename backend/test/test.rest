@@ -1,0 +1,33 @@
+
+@hostname = localhost
+@port = 9000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+# POST /users
+POST http://{{host}}/api/users/getUsers HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "email": "joa@maina.com",
+    "password": "Joan#1234567"
+}
+
+###
+POST http://{{host}}/api/users/deleteUser HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "email": "joa@maina.com",
+    "password": "Joan#12345"
+}
+###
+POST http://{{host}}/api/users/updatePassword HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "firstname":"joa",
+    "lastname":"maina",
+    "email": "joa@maina.com",
+    "password": "Joan#12345"
+}
